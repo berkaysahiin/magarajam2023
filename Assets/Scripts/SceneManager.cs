@@ -38,6 +38,12 @@ public class SceneManagerScript : MonoBehaviour
         {
             ReloadScene();
         }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            LoadNextScene();
+        }
+
     }
 
     public void LoadScene(string sceneName)

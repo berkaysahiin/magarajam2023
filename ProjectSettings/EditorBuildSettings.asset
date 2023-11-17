@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SettingsScreen.unity
+    guid: e8b804093c380204bb34690aaa7cbbe2
+  - enabled: 1
+    path: Assets/Scenes/AlpEren.unity
+    guid: d79494c473a29684db3cfbe82e15924c
+  - enabled: 1
+    path: Assets/Scenes/berkay.unity
+    guid: b7931ef58d4a89a45935bb98e66e3cff
   m_configObjects: {}

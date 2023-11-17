@@ -407,9 +407,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanResize: 1
-  CanFreeze: 1
+  CanFreeze: 0
   CanSwitch: 1
-  CanRemoveCollision: 1
+  CanRemoveCollision: 0
   CanRotate: 1
 --- !u!1 &518614808
 GameObject:
