@@ -30,8 +30,6 @@ public class SkillController : MonoBehaviour
         {"Rotate", State.Skill_Rotate },
     };
 
-   
-
     private Dictionary<string, bool> skillToBool;
 
     private void Awake()
@@ -40,6 +38,7 @@ public class SkillController : MonoBehaviour
 
         skillToBool = new Dictionary<string, bool>
         {
+            {"None", false},
             {"Resize", CanResize},
             {"Freeze", CanFreeze },
             {"Switch", CanSwitch },
@@ -48,10 +47,9 @@ public class SkillController : MonoBehaviour
         };
     }
 
-
     private void Start()
     {
-        currentSkill = inputToSkill["Alpha1"];
+        currentSkill = new None();
     }
 
     void Update()
@@ -79,6 +77,8 @@ public class SkillController : MonoBehaviour
         {
             var obj = GetInteractable();
 
+            if (obj == null) return;
+
             if (currentSkill.CheckApply(obj) && skillToBool[currentSkill.ToString()])
             {
                 currentSkill.Apply(obj);
@@ -88,6 +88,8 @@ public class SkillController : MonoBehaviour
         else if (Input.GetMouseButton(1))
         {
             var obj = GetInteractable();
+
+            if (obj == null) return;
 
             if (currentSkill.CheckRevert(obj) && skillToBool[currentSkill.ToString()])
             {
@@ -102,6 +104,7 @@ public class SkillController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             var obj = GetInteractable();
+            if (obj == null) return;
 
             if (currentSkill.CheckApply(obj) && skillToBool[currentSkill.ToString()])
             {
@@ -112,6 +115,7 @@ public class SkillController : MonoBehaviour
         else if (Input.GetMouseButtonDown(1))
         {
             var obj = GetInteractable();
+            if (obj == null) return;
             
             if (currentSkill.CheckRevert(obj) && skillToBool[currentSkill.ToString()])
             {
@@ -159,7 +163,8 @@ public class SkillController : MonoBehaviour
                 {
                     if (inputToSkill.TryGetValue(keyCode.ToString(), out var value))
                     {
-                        currentSkill = value;
+                        if (skillToBool[value.ToString()])
+                            currentSkill = value;
                     }
                 }
             }
