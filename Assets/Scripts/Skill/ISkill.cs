@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface ISkill {
-    bool Check(GameObject obj);
+    bool CheckApply(GameObject obj);
+    bool CheckRevert(GameObject obj);
     void Apply(GameObject obj);
     void Revert(GameObject obj);
 }
