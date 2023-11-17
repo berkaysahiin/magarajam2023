@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class SkillController : MonoBehaviour
 {
+    public ISkill CurrentSkill => currentSkill;
+
+
     private CharacterStateMachine characterStateMachine;
     private ISkill currentSkill = null;
 
@@ -19,7 +22,6 @@ public class SkillController : MonoBehaviour
         {"Alpha5", new Rotate() },
     };
 
-    [SerializeField]
     private Dictionary<string, State> skillToState = new() {
         {"Resize", State.Skill_Resize },
         {"Switch", State.Skill_Switch },
@@ -28,12 +30,13 @@ public class SkillController : MonoBehaviour
         {"Rotate", State.Skill_Rotate },
     };
 
-    private Dictionary<string, bool> skillToBool;   
+   
 
-    private void Start()
+    private Dictionary<string, bool> skillToBool;
+
+    private void Awake()
     {
         characterStateMachine = GetComponent<CharacterStateMachine>();
-        currentSkill = inputToSkill["Alpha1"];
 
         skillToBool = new Dictionary<string, bool>
         {
@@ -43,27 +46,33 @@ public class SkillController : MonoBehaviour
             {"RemoveCollision", CanRemoveCollision },
             {"Rotate", CanRotate }
         };
-
     }
 
-void Update()
+
+    private void Start()
+    {
+        currentSkill = inputToSkill["Alpha1"];
+    }
+
+    void Update()
     {
         GetSkillMode();
-                    
+
         switch (currentSkill)
         {
             case Resize:
                 MouseHoldSkill();
                 break;
             case Rotate:
-                MouseHoldSkill(); 
+                MouseHoldSkill();
                 break;
-            default: 
+            default:
                 MouseClickSkill();
                 break;
         }
-    }
 
+    }
+    
     private void MouseHoldSkill()
     {
         if (Input.GetMouseButton(0))

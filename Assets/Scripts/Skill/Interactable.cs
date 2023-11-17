@@ -31,11 +31,11 @@ public class Interactable : MonoBehaviour
 
     [HideInInspector] public Outline outline;
 
+
     private void Start()
     {
         outline = this.gameObject.AddComponent<Outline>();
-        outline.OutlineWidth = 6;
-        outline.OutlineColor = Color.blue;
+        outline.OutlineWidth = 10;
         outline.enabled = false;
     }
 

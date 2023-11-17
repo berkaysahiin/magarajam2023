@@ -14,8 +14,12 @@ public class Switch : ISkill
         if (obj1 == null)
         {
             obj1 = obj;
+            var obj1Outline = obj1.GetComponent <Outline>();
+            obj1Outline.OutlineColor = Color.white;
+            obj1Outline.enabled = true;
             return;
         }
+
 
         if (obj.GetInstanceID() == obj1.GetInstanceID()) return;
 
@@ -33,6 +37,10 @@ public class Switch : ISkill
 
         obj.SetActive(true);
         obj1.SetActive(true);
+
+        var obj1OutlineAfter = obj1.GetComponent <Outline>();
+        obj1OutlineAfter.OutlineColor = Color.white;
+        obj1OutlineAfter.enabled = false;
 
         obj1 = null;
     }
