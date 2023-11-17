@@ -108,7 +108,11 @@ public class SkillController : MonoBehaviour
 
             if (currentSkill.CheckApply(obj) && skillToBool[currentSkill.ToString()])
             {
+                var currentSkillTrigger = currentSkill.ToString();
                 currentSkill.Apply(obj);
+                characterStateMachine.Trigger(currentSkillTrigger);
+                Debug.Log("Triggered " + currentSkillTrigger);
+                                
             }
 
         }
@@ -120,6 +124,9 @@ public class SkillController : MonoBehaviour
             if (currentSkill.CheckRevert(obj) && skillToBool[currentSkill.ToString()])
             {
                 currentSkill.Revert(obj);
+                var currentSkillTrigger = "R" + currentSkill.ToString();
+                characterStateMachine.Trigger(currentSkillTrigger);
+                Debug.Log("Triggered " + currentSkillTrigger);
             }
 
         }

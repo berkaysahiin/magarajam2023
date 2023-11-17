@@ -434,6 +434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand_Model
       objectReference: {fileID: 0}
+    - target: {fileID: 1291250016929520391, guid: bb9178ad23fc7a2489834d936d3c0b40, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8ea3b31b4ee49a449b0d7f06bdeaef6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
