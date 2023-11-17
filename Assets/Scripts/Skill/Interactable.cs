@@ -29,12 +29,12 @@ public class Interactable : MonoBehaviour
     public float MaxSize = 10;
 
 
-    private Outline outline;
+    [HideInInspector] public Outline outline;
 
     private void Start()
     {
         outline = this.gameObject.AddComponent<Outline>();
-        outline.OutlineWidth = 4;
+        outline.OutlineWidth = 6;
         outline.OutlineColor = Color.blue;
         outline.enabled = false;
     }
