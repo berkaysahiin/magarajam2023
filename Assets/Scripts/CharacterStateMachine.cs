@@ -15,8 +15,6 @@ public enum State
 {
     None,
     Idle,
-    Moving,
-    Running,
     Skill_RemoveCollision,
     Skill_Freeze,
     Skill_Resize,
