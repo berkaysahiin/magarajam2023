@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
@@ -7,6 +8,7 @@ using UnityEngine;
 public class Switch : ISkill
 {
     private GameObject obj1 = null;
+
     public void Apply(GameObject obj)
     {
         if (obj1 == null)
@@ -17,14 +19,17 @@ public class Switch : ISkill
 
         if (obj.GetInstanceID() == obj1.GetInstanceID()) return;
 
-        var vec1 = obj.transform.position; 
-        var vec2 = obj1.transform.position;
+        var posObj = obj.transform.position; 
+        var posObj1 = obj1.transform.position;
 
         obj.SetActive(false);
         obj1.SetActive(false);
 
-        obj.transform.position = Vector3.Lerp(vec1, vec2, 1);
-        obj1.transform.position = Vector3.Lerp(vec2, vec1, 1);
+        var dest = new Vector3 (posObj.x, posObj1.y, posObj.z);  
+        var dest1 = new Vector3 (posObj1.x, posObj.y, posObj1.z);  
+
+        obj.transform.position = Vector3.Lerp(posObj, dest1, 1);
+        obj1.transform.position = Vector3.Lerp(posObj1, dest, 1);
 
         obj.SetActive(true);
         obj1.SetActive(true);
@@ -41,12 +46,6 @@ public class Switch : ISkill
         return true;
     }
 
-    public bool CheckRevert(GameObject obj)
-    {
-        return true;
-    }
-
-    public void Revert(GameObject obj)
-    {
-    }
+    public bool CheckRevert(GameObject obj) => true;
+    public void Revert(GameObject obj) {}
 }

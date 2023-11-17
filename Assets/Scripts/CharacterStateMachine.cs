@@ -21,5 +21,6 @@ public enum State
     Skill_Freeze,
     Skill_Resize,
     Skill_Switch,
+    Skill_Rotate,
 }
 

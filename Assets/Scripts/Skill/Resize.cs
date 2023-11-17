@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Resize : ISkill
 {
-    public Vector3 ScaleVector = new(0.01f,0.01f,0.01f);
-    public float MinSize = 0.8f;
-    public float MaxSize = 4;
-
+    
 
     public void Apply(GameObject obj)
     {
-        obj.transform.localScale += ScaleVector;
+        var interactable = obj.GetComponent<Interactable>();
+        obj.transform.localScale += interactable.ScaleVector;
         obj.GetComponent<Interactable>().Resizing = true;
         Debug.Log("Resizing " + obj.name);
     }
@@ -20,8 +18,9 @@ public class Resize : ISkill
     {
         if (obj == null) return false;
         if (!obj.activeInHierarchy) return false;
-        if (obj.transform.localScale.magnitude >= MaxSize) return false;
-        if (!obj.TryGetComponent(out Interactable interactable) || !interactable.Resizable) return false;
+        if (!obj.TryGetComponent(out Interactable interactable) ||
+            !interactable.Resizable ||
+            obj.transform.localScale.magnitude >= interactable.MaxSize ) return false;
 
         return true;
     }
@@ -30,16 +29,19 @@ public class Resize : ISkill
     {
         if (obj == null) return false;
         if (!obj.activeInHierarchy) return false;
-        if (obj.transform.localScale.magnitude <= MinSize) return false;
 
-        if (!obj.TryGetComponent(out Interactable interactable) || !interactable.Resizable) return false;
+        if (!obj.TryGetComponent(out Interactable interactable)
+            || !interactable.Resizable
+            || obj.transform.localScale.magnitude <= interactable.MinSize
+            ) return false;
 
         return true;
     }
 
     public void Revert(GameObject obj)
     {
-        obj.transform.localScale -= ScaleVector;
+        var interactable = obj.GetComponent<Interactable>();
+        obj.transform.localScale -= interactable.ScaleVector;
         obj.GetComponent<Interactable>().Resizing = false;
         Debug.Log("Reverted Resize " + obj.name);
     }
