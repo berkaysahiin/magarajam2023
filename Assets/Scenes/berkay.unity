@@ -2285,8 +2285,6 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 0.65
   orientation: {fileID: 5593555344356000485}
-  cam: {fileID: 5759665219380204216}
-  isCrouhch: 0
   canMove: 1
 --- !u!81 &5436808507993676959
 AudioListener:

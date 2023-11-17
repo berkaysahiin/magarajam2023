@@ -38,8 +38,6 @@ public class PlayerMove : MonoBehaviour
         {
             crouch(1.8f);
         }
-
-        Debug.Log(IsGrounded());
     }
 
     void PlayerMovement()
