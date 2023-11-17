@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
-    [SerializeField] private float sensX;
-    [SerializeField] private float sensY;
+    [SerializeField] private float sens;
 
     [SerializeField] private float up;
     [SerializeField] private float down;
@@ -26,8 +25,8 @@ public class PlayerCam : MonoBehaviour
     }
     void MouseControl()
     {
-        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensX;
-        float mousey = Input.GetAxis("Mouse Y") * Time.deltaTime * sensY;
+        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sens;
+        float mousey = Input.GetAxis("Mouse Y") * Time.deltaTime * sens;
 
         xRotation -= mousey;
         xRotation = Mathf.Clamp(xRotation, up, down);
