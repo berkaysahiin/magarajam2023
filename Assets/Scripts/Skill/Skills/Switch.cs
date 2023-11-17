@@ -30,6 +30,11 @@ public class Switch : ISkill
         obj.transform.position = Vector3.Lerp(posObj, dest1, 1);
         obj1.transform.position = Vector3.Lerp(posObj1, dest, 1);
 
+        var rot1 = obj1.transform.rotation;
+        obj1.transform.rotation = obj.transform.rotation;
+        obj.transform.rotation = rot1;
+
+
         obj.SetActive(true);
         obj1.SetActive(true);
 
