@@ -5,17 +5,19 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
+    float defualt;
     [SerializeField] private float jumpForce = 8f; // Zýplama kuvveti
     [SerializeField] private Transform orientation;
-
+    [SerializeField] private GameObject cam;
     private CharacterController controller;
     private Vector3 playerVelocity;
-
+    [SerializeField] bool isCrouhch;
     [HideInInspector]
     public bool canMove = true;
 
     void Start()
     {
+        defualt = moveSpeed;
         controller = GetComponent<CharacterController>();
     }
 
@@ -28,10 +30,30 @@ public class PlayerMove : MonoBehaviour
         {
             Jump();
         }
+        if(Input.GetKey(KeyCode.LeftShift) && IsGrounded())
+        {
+            crouch(1.1f);
+        }
+        else
+        {
+            crouch(1.8f);
+        }
     }
 
     void PlayerMovement()
     {
+        if (!IsGrounded())
+        {
+            moveSpeed = Mathf.Lerp(moveSpeed, defualt / 2.0f, 2f * Time.deltaTime);
+        }
+        else if (!isCrouhch)
+        {
+            moveSpeed = defualt;
+        }
+        else 
+        {
+            moveSpeed = defualt / 2;
+        }
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -62,7 +84,7 @@ public class PlayerMove : MonoBehaviour
     bool IsGrounded()
     {
         float rayDistance = controller.height * 0.5f + 0.1f;
-        Vector3 rayOrigin = transform.position + controller.center; 
+        Vector3 rayOrigin = orientation.position + controller.center; 
 
         if (Physics.Raycast(rayOrigin, Vector3.down, rayDistance))
         {
@@ -75,5 +97,13 @@ public class PlayerMove : MonoBehaviour
     void Jump()
     {
         playerVelocity.y = Mathf.Sqrt(jumpForce * -2f * Physics.gravity.y);
+    }
+
+    void crouch(float number)
+    {
+        Vector3 newPosition = cam.transform.position;
+        newPosition.y = Mathf.Lerp(newPosition.y, number, 2f * Time.deltaTime);
+        cam.transform.position = newPosition;
+        isCrouhch = (newPosition.y <= 1.2f);
     }
 }
