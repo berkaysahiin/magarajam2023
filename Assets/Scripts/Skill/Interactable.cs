@@ -29,21 +29,57 @@ public class Interactable : MonoBehaviour
     public Vector3 MinSize = Vector3.zero;
     public Vector3 MaxSize = Vector3.zero;
 
+    SkillController skillController;
 
-    [HideInInspector] public Outline outline;
+    Outline outline;
+    Dictionary<string, bool> skillToBoolInteractable;
+    Dictionary<string, Color> skillToColor = new() {
+        {"None", Color.clear },
+        {"Resize", Color.cyan },
+        {"Switch", Color.red },
+        {"RemoveCollision", Color.green },
+        {"Freeze", Color.blue },
+        {"Rotate", Color.magenta },
+    };
 
+    private void Awake()
+    {
+        skillController = FindObjectOfType<SkillController>();
+    }
 
     private void Start()
     {
         outline = this.gameObject.AddComponent<Outline>();
         outline.OutlineWidth = 10;
         outline.enabled = false;
+
+        skillToBoolInteractable = new()
+        {
+            { "None", false },
+            { "RemoveCollision", CollisionRemovable },
+            { "Switch", Switchable },
+            { "Resize", Resizable },
+            { "Freeze", Freezable },
+            { "Rotate", Rotatable },
+        };
+    }
+
+    private void Update()
+    {
+        outline.OutlineColor = skillToColor[skillController.CurrentSkill.ToString()];
     }
 
     private void OnMouseOver()
     {
         if (outline == null) { return ; }
-        outline.enabled = true;
+        if (skillToBoolInteractable[skillController.CurrentSkill.ToString()])
+        {
+            outline.enabled = true;
+        }
+        else
+        {
+            outline.enabled = false;
+        }
     }
 
     private void OnMouseExit()
