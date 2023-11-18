@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class None : ISkill
 {
-    public bool CurrentlyUsing => false;
-
-    bool ISkill.CurrentlyUsing { get => false; set => throw new System.NotImplementedException(); }
+    public bool CurrentlyUsing { get; set; }
 
     public void Apply(GameObject obj)
     {
