@@ -5,7 +5,7 @@ using UnityEngine;
 public class RortateControl : MonoBehaviour
 {
     public bool Finished;
-
+    [SerializeField] private GameObject lights;
     [SerializeField] Vector3 targetRotation = Vector3.zero;
     [SerializeField] float tolAngle = 30f;
     
@@ -30,5 +30,9 @@ public class RortateControl : MonoBehaviour
             Debug.Log("Angle is smaller than tolerance angle");
             Finished = true;
         }
+        else
+            Finished = false;
+
+        lights.SetActive(Finished);
     }
 }
