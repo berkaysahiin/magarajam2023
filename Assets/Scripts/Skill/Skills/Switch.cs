@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Switch : ISkill
 {
+    public bool CurrentlyUsing { get; set; }
+
     private GameObject obj1 = null;
 
     public void Apply(GameObject obj)

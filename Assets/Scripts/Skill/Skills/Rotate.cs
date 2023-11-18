@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Rotate : ISkill
 {
+    public bool CurrentlyUsing { get; set; }
+
     public void Apply(GameObject obj)
     {
         var interactable =  obj.GetComponent<Interactable>();

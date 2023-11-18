@@ -7,4 +7,6 @@ public interface ISkill {
     bool CheckRevert(GameObject obj);
     void Apply(GameObject obj);
     void Revert(GameObject obj);
+
+    bool CurrentlyUsing { get; set; }
 }

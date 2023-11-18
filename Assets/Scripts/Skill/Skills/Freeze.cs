@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Freeze : ISkill
 {
+    public bool CurrentlyUsing { get; set; }
+
     public void Apply(GameObject obj)
     {
         obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;

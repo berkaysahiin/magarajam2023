@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Resize : ISkill
 {
-    
-
+    public bool CurrentlyUsing { get; set; }
     public void Apply(GameObject obj)
     {
         var interactable = obj.GetComponent<Interactable>();
