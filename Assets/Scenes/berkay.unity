@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -250,8 +250,8 @@ MonoBehaviour:
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
-  MinSize: 0.8
-  MaxSize: 10
+  MinSize: {x: 0, y: 0, z: 0}
+  MaxSize: {x: 10, y: 10, z: 10}
   outline: {fileID: 0}
 --- !u!54 &162177188
 Rigidbody:
@@ -406,8 +406,8 @@ MonoBehaviour:
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
-  MinSize: 0.8
-  MaxSize: 10
+  MinSize: {x: 0, y: 0, z: 0}
+  MaxSize: {x: 10, y: 10, z: 10}
   outline: {fileID: 0}
 --- !u!54 &518614814
 Rigidbody:
@@ -562,8 +562,8 @@ MonoBehaviour:
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
-  MinSize: 0.8
-  MaxSize: 10
+  MinSize: {x: 0, y: 0, z: 0}
+  MaxSize: {x: 10, y: 10, z: 10}
   outline: {fileID: 0}
 --- !u!54 &635668739
 Rigidbody:
@@ -718,8 +718,8 @@ MonoBehaviour:
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
-  MinSize: 0.8
-  MaxSize: 10
+  MinSize: {x: 0, y: 0, z: 0}
+  MaxSize: {x: 10, y: 10, z: 10}
   outline: {fileID: 0}
 --- !u!54 &661962609
 Rigidbody:
@@ -778,7 +778,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.06
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -992,8 +992,8 @@ MonoBehaviour:
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
-  MinSize: 0.8
-  MaxSize: 10
+  MinSize: {x: 0, y: 0, z: 0}
+  MaxSize: {x: 10, y: 10, z: 10}
   outline: {fileID: 0}
 --- !u!54 &1382314966
 Rigidbody:
@@ -1148,8 +1148,8 @@ MonoBehaviour:
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
-  MinSize: 0.8
-  MaxSize: 10
+  MinSize: {x: 0, y: 0, z: 0}
+  MaxSize: {x: 10, y: 10, z: 10}
   outline: {fileID: 0}
 --- !u!54 &1459596445
 Rigidbody:
@@ -1304,8 +1304,8 @@ MonoBehaviour:
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
-  MinSize: 0.8
-  MaxSize: 10
+  MinSize: {x: 0, y: 0, z: 0}
+  MaxSize: {x: 10, y: 10, z: 10}
   outline: {fileID: 0}
 --- !u!54 &1559135674
 Rigidbody:
@@ -1460,8 +1460,8 @@ MonoBehaviour:
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
-  MinSize: 0.8
-  MaxSize: 10
+  MinSize: {x: 0, y: 0, z: 0}
+  MaxSize: {x: 10, y: 10, z: 10}
   outline: {fileID: 0}
 --- !u!54 &1583609594
 Rigidbody:
@@ -1616,8 +1616,8 @@ MonoBehaviour:
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
-  MinSize: 0.8
-  MaxSize: 10
+  MinSize: {x: 0, y: 0, z: 0}
+  MaxSize: {x: 10, y: 10, z: 10}
   outline: {fileID: 0}
 --- !u!54 &1904433736
 Rigidbody:
@@ -1772,8 +1772,8 @@ MonoBehaviour:
   _rotatable: 1
   ScaleVector: {x: 0, y: 0.01, z: 0}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
-  MinSize: 0.8
-  MaxSize: 10
+  MinSize: {x: 0, y: 0, z: 0}
+  MaxSize: {x: 10, y: 10, z: 10}
   outline: {fileID: 0}
 --- !u!54 &1976788947
 Rigidbody:
