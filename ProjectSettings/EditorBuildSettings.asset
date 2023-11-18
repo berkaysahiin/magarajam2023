@@ -8,7 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/berkay.unity
     guid: b7931ef58d4a89a45935bb98e66e3cff
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
