@@ -19,7 +19,10 @@ public class Resize : ISkill
         if (!obj.activeInHierarchy) return false;
         if (!obj.TryGetComponent(out Interactable interactable) ||
             !interactable.Resizable ||
-            obj.transform.localScale.magnitude >= interactable.MaxSize ) return false;
+            obj.transform.localScale.x > interactable.MaxSize.x ||
+            obj.transform.localScale.y > interactable.MaxSize.y ||
+            obj.transform.localScale.z > interactable.MaxSize.z) return false;
+
 
         return true;
     }
@@ -31,8 +34,10 @@ public class Resize : ISkill
 
         if (!obj.TryGetComponent(out Interactable interactable)
             || !interactable.Resizable
-            || obj.transform.localScale.magnitude <= interactable.MinSize
-            ) return false;
+            || obj.transform.localScale.x < interactable.MinSize.x 
+            || obj.transform.localScale.y < interactable.MinSize.y 
+            || obj.transform.localScale.z < interactable.MinSize.z) 
+            return false;
 
         return true;
     }

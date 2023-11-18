@@ -25,8 +25,8 @@ public class Interactable : MonoBehaviour
     
     public Vector3 ScaleVector = new(0.01f,0.01f,0.01f);
     public Vector3 RotateVector = new(0.1f,0.1f,0.1f);
-    public float MinSize = 0.8f;
-    public float MaxSize = 10;
+    public Vector3 MinSize = Vector3.zero;
+    public Vector3 MaxSize = Vector3.zero;
 
 
     [HideInInspector] public Outline outline;
