@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RemoveCollision : ISkill
 {
+    public bool CurrentlyUsing { get; set; }
     public void Apply(GameObject obj)
     {
         obj.GetComponent<Collider>().excludeLayers += LayerMask.GetMask("Default");

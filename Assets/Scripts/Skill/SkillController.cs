@@ -86,6 +86,7 @@ public class SkillController : MonoBehaviour
                 Debug.Log("Bool is true " + currentSkillBool);
 
                 currentSkill.Apply(obj);
+                currentSkill.CurrentlyUsing = true;
             }
 
         }
@@ -101,6 +102,7 @@ public class SkillController : MonoBehaviour
                 characterStateMachine.SetBool(currentSkillBool, true);
                 Debug.Log("Bool is true " + currentSkillBool);
                 currentSkill.Revert(obj);
+                currentSkill.CurrentlyUsing = true;
             }
         }
         else
@@ -108,6 +110,7 @@ public class SkillController : MonoBehaviour
                 var currentSkillBool = currentSkill.ToString();
                 characterStateMachine.SetBool(currentSkillBool, false);
                 Debug.Log("Bool is false " + currentSkillBool);
+                currentSkill.CurrentlyUsing = false;
         }
 
     }
@@ -124,6 +127,7 @@ public class SkillController : MonoBehaviour
                 var currentSkillTrigger = currentSkill.ToString();
                 currentSkill.Apply(obj);
                 characterStateMachine.Trigger(currentSkillTrigger);
+                currentSkill.CurrentlyUsing = true;
                 Debug.Log("Triggered " + currentSkillTrigger);
                                 
             }
@@ -139,21 +143,17 @@ public class SkillController : MonoBehaviour
                 currentSkill.Revert(obj);
                 var currentSkillTrigger = "R" + currentSkill.ToString();
                 characterStateMachine.Trigger(currentSkillTrigger);
+                currentSkill.CurrentlyUsing = true;
                 Debug.Log("Triggered " + currentSkillTrigger);
             }
 
         }
-    }
-
-    private void ChangeStateTo(ISkill currentSkill)
-    {
-       if (skillToState.TryGetValue(currentSkill.ToString(), out State state))
+        else
         {
-            Debug.Log("Changed state to " +  state);
-            characterStateMachine.ChangeStateTo(state);
+                currentSkill.CurrentlyUsing = false;
         }
     }
-
+   
     private GameObject GetInteractable()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -183,7 +183,7 @@ public class SkillController : MonoBehaviour
                 {
                     if (inputToSkill.TryGetValue(keyCode.ToString(), out var value))
                     {
-                        if (skillToBool[value.ToString()])
+                        if (skillToBool[value.ToString()] && !currentSkill.CurrentlyUsing)
                             currentSkill = value;
                     }
                 }
