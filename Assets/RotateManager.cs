@@ -5,8 +5,6 @@ using UnityEngine;
 public class RotateManager : MonoBehaviour
 {
     RortateControl[] childRotates;
-    [SerializeField] private Light _light;
-
     void Start()
     {
         childRotates = GetComponentsInChildren<RortateControl>();
@@ -23,7 +21,5 @@ public class RotateManager : MonoBehaviour
                 childsFinished = false;
             }
         }
-
-        _light.enabled = childsFinished;
     }
 }
