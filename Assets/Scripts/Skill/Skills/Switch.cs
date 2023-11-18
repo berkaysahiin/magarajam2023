@@ -26,7 +26,6 @@ public class Switch : ISkill
         obj.SetActive(false);
         obj1.SetActive(false);
 
-
         Vector3 dest, dest1;
 
         if(obj.GetComponent<Interactable>().SwitchableHeight || obj1.GetComponent<Interactable>().SwitchableHeight)
@@ -39,6 +38,8 @@ public class Switch : ISkill
             dest = new Vector3 (posObj.x, posObj1.y, posObj.z);  
             dest1 = new Vector3 (posObj1.x, posObj.y, posObj1.z);  
         }
+
+        Debug.Log($"Obj {obj.transform.position} -> {dest1} ||| Obj1 {obj1.transform.position} -> {dest} ");
          
         obj.transform.position = Vector3.Lerp(posObj, dest1, 1);
         obj1.transform.position = Vector3.Lerp(posObj1, dest, 1);
@@ -49,7 +50,6 @@ public class Switch : ISkill
             obj1.transform.rotation = obj.transform.rotation;
             obj.transform.rotation = rot1;
         }
-
 
         obj.SetActive(true);
         obj1.SetActive(true);
