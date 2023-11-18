@@ -244,15 +244,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collisionRemovable: 1
-  _resizable: 1
+  _resizable: 0
   _freezable: 1
   _switchable: 1
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
+  RevertRotateVector: {x: 0.1, y: 0.1, z: 0.1}
   MinSize: {x: 0, y: 0, z: 0}
   MaxSize: {x: 10, y: 10, z: 10}
-  outline: {fileID: 0}
 --- !u!54 &162177188
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -400,15 +400,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collisionRemovable: 1
-  _resizable: 1
+  _resizable: 0
   _freezable: 1
   _switchable: 1
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
+  RevertRotateVector: {x: 0.1, y: 0.1, z: 0.1}
   MinSize: {x: 0, y: 0, z: 0}
   MaxSize: {x: 10, y: 10, z: 10}
-  outline: {fileID: 0}
 --- !u!54 &518614814
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -556,15 +556,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collisionRemovable: 1
-  _resizable: 1
+  _resizable: 0
   _freezable: 1
   _switchable: 1
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
+  RevertRotateVector: {x: 0.1, y: 0.1, z: 0.1}
   MinSize: {x: 0, y: 0, z: 0}
   MaxSize: {x: 10, y: 10, z: 10}
-  outline: {fileID: 0}
 --- !u!54 &635668739
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -712,15 +712,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collisionRemovable: 1
-  _resizable: 1
+  _resizable: 0
   _freezable: 1
   _switchable: 1
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
+  RevertRotateVector: {x: 0.1, y: 0.1, z: 0.1}
   MinSize: {x: 0, y: 0, z: 0}
   MaxSize: {x: 10, y: 10, z: 10}
-  outline: {fileID: 0}
 --- !u!54 &661962609
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -986,15 +986,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collisionRemovable: 1
-  _resizable: 1
+  _resizable: 0
   _freezable: 1
   _switchable: 1
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
+  RevertRotateVector: {x: 0.1, y: 0.1, z: 0.1}
   MinSize: {x: 0, y: 0, z: 0}
   MaxSize: {x: 10, y: 10, z: 10}
-  outline: {fileID: 0}
 --- !u!54 &1382314966
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1142,15 +1142,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collisionRemovable: 1
-  _resizable: 1
+  _resizable: 0
   _freezable: 1
   _switchable: 1
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
+  RevertRotateVector: {x: 0.1, y: 0.1, z: 0.1}
   MinSize: {x: 0, y: 0, z: 0}
   MaxSize: {x: 10, y: 10, z: 10}
-  outline: {fileID: 0}
 --- !u!54 &1459596445
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1279,8 +1279,8 @@ Transform:
   m_GameObject: {fileID: 1559135668}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.79, y: 1.39, z: 13.18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 7.79, y: 2.38, z: 13.18}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1304,9 +1304,9 @@ MonoBehaviour:
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
+  RevertRotateVector: {x: 0.1, y: 0.1, z: 0.1}
   MinSize: {x: 0, y: 0, z: 0}
   MaxSize: {x: 10, y: 10, z: 10}
-  outline: {fileID: 0}
 --- !u!54 &1559135674
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1454,15 +1454,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collisionRemovable: 1
-  _resizable: 1
+  _resizable: 0
   _freezable: 1
   _switchable: 1
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
+  RevertRotateVector: {x: 0.1, y: 0.1, z: 0.1}
   MinSize: {x: 0, y: 0, z: 0}
   MaxSize: {x: 10, y: 10, z: 10}
-  outline: {fileID: 0}
 --- !u!54 &1583609594
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1610,15 +1610,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collisionRemovable: 1
-  _resizable: 1
+  _resizable: 0
   _freezable: 1
   _switchable: 1
   _rotatable: 1
   ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
+  RevertRotateVector: {x: 0.1, y: 0.1, z: 0.1}
   MinSize: {x: 0, y: 0, z: 0}
   MaxSize: {x: 10, y: 10, z: 10}
-  outline: {fileID: 0}
 --- !u!54 &1904433736
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1766,15 +1766,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collisionRemovable: 1
-  _resizable: 1
+  _resizable: 0
   _freezable: 1
   _switchable: 1
   _rotatable: 1
   ScaleVector: {x: 0, y: 0.01, z: 0}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
+  RevertRotateVector: {x: 0.1, y: 0.1, z: 0.1}
   MinSize: {x: 0, y: 0, z: 0}
   MaxSize: {x: 10, y: 10, z: 10}
-  outline: {fileID: 0}
 --- !u!54 &1976788947
 Rigidbody:
   m_ObjectHideFlags: 0
