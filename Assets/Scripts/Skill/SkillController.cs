@@ -81,6 +81,10 @@ public class SkillController : MonoBehaviour
 
             if (currentSkill.CheckApply(obj) && skillToBool[currentSkill.ToString()])
             {
+                var currentSkillBool = currentSkill.ToString();
+                characterStateMachine.SetBool(currentSkillBool, true);
+                Debug.Log("Bool is true " + currentSkillBool);
+
                 currentSkill.Apply(obj);
             }
 
@@ -93,8 +97,17 @@ public class SkillController : MonoBehaviour
 
             if (currentSkill.CheckRevert(obj) && skillToBool[currentSkill.ToString()])
             {
+                var currentSkillBool = currentSkill.ToString();
+                characterStateMachine.SetBool(currentSkillBool, true);
+                Debug.Log("Bool is true " + currentSkillBool);
                 currentSkill.Revert(obj);
             }
+        }
+        else
+        {
+                var currentSkillBool = currentSkill.ToString();
+                characterStateMachine.SetBool(currentSkillBool, false);
+                Debug.Log("Bool is false " + currentSkillBool);
         }
 
     }

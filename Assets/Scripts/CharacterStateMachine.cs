@@ -19,10 +19,20 @@ public class CharacterStateMachine : MonoBehaviour
         animator.SetTrigger(trigger);
     }
 
+    public void SetBool(string bl, bool value)
+    {
+        animator.SetBool(bl, value);
+    }
+
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+    }
+
+    private void Update()
+    {
+        
     }
 
 }

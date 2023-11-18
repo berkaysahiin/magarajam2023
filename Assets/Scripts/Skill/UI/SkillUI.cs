@@ -17,7 +17,7 @@ public class SkillUI : MonoBehaviour
         {"Switch", Color.red },
         {"RemoveCollision", Color.green },
         {"Freeze", Color.blue },
-        {"Rotate", Color.grey },
+        {"Rotate", Color.magenta },
     };
 
 
