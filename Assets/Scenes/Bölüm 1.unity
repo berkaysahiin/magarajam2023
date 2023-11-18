@@ -1664,8 +1664,10 @@ GameObject:
   - component: {fileID: 317533249}
   - component: {fileID: 317533248}
   - component: {fileID: 317533247}
+  - component: {fileID: 317533251}
+  - component: {fileID: 317533252}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Rotatable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1752,13 +1754,50 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317533246}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -1.21, y: 7.77, z: 66.47}
+  m_LocalRotation: {x: -0.5899169, y: 0.589917, z: -0.38986924, w: 0.38986924}
+  m_LocalPosition: {x: -0.95, y: 2.4, z: 6.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 113.079, z: -90}
+--- !u!114 &317533251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317533246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1836b117a1d6bca45b92a535e1adfe08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Finished: 0
+  targetRotation: {x: 0, y: 0, z: 270}
+  tolAngle: 5
+--- !u!114 &317533252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317533246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aee0e542b450df499d64564c0058583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionRemovable: 0
+  _resizable: 0
+  _freezable: 0
+  _switchable: 0
+  _rotatable: 1
+  ScaleVector: {x: 0.01, y: 0.01, z: 0.01}
+  RotateVector: {x: 0.5, y: 0, z: 0}
+  MinSize: {x: 0, y: 0, z: 0}
+  MaxSize: {x: 0, y: 0, z: 0}
+  outline: {fileID: 0}
 --- !u!1 &357168015
 GameObject:
   m_ObjectHideFlags: 0
@@ -8171,7 +8210,7 @@ MonoBehaviour:
   ScaleVector: {x: 0, y: 0.01, z: 0}
   RotateVector: {x: 0.5, y: 0.5, z: 0.5}
   MinSize: {x: 0, y: 0.1, z: 0}
-  MaxSize: {x: 5.44, y: 5.44, z: 5.44}
+  MaxSize: {x: 10, y: 5.44, z: 10}
   outline: {fileID: 0}
 --- !u!54 &1976788947
 Rigidbody:
@@ -9338,6 +9377,6 @@ SceneRoots:
   - {fileID: 1908107827}
   - {fileID: 125725310}
   - {fileID: 179002306}
-  - {fileID: 317533250}
   - {fileID: 2060115522}
   - {fileID: 265833732}
+  - {fileID: 317533250}

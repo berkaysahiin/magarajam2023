@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class RortateControl : MonoBehaviour
 {
-    [SerializeField] private List<Transform> puzleOBJ = new();
-    [SerializeField] private List<Vector3> winList = new();
-    [SerializeField] private float tolareAngel;
+    public bool Finished;
+
+    [SerializeField] Vector3 targetRotation = Vector3.zero;
+    [SerializeField] float tolAngle = 30f;
+    
+
     void Start()
     {
         
@@ -15,9 +18,17 @@ public class RortateControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < puzleOBJ.Count; i++)
-        {
+        if (Finished) return;
 
+        // check the angle between this object's rotation and the target rotation. if abs angle is smaller ben tolAngle debug.log true
+        float angle = Vector3.Angle(transform.eulerAngles, targetRotation);
+
+        // Check if the absolute angle is smaller than the tolerance angle
+        if (Mathf.Abs(angle) < tolAngle)
+        {
+            // Debug log that the angle is smaller than the tolerance angle
+            Debug.Log("Angle is smaller than tolerance angle");
+            Finished = true;
         }
     }
 }
