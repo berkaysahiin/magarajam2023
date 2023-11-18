@@ -25,6 +25,7 @@ public class Interactable : MonoBehaviour
     
     public Vector3 ScaleVector = new(0.01f,0.01f,0.01f);
     public Vector3 RotateVector = new(0.1f,0.1f,0.1f);
+    public Vector3 RevertRotateVector = new(0.1f,0.1f,0.1f);
     public Vector3 MinSize = Vector3.zero;
     public Vector3 MaxSize = Vector3.zero;
 

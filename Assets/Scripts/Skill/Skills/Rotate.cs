@@ -39,7 +39,7 @@ public class Rotate : ISkill
     public void Revert(GameObject obj)
     {
         var interactable =  obj.GetComponent<Interactable>();
-        obj.transform.Rotate(-interactable.RotateVector);
+        obj.transform.Rotate(interactable.RevertRotateVector);
         interactable.Rotating = true;
 
     }
