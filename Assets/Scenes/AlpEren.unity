@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 174233123}
   - component: {fileID: 174233122}
   - component: {fileID: 174233125}
+  - component: {fileID: 174233126}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -271,7 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightOBJ: {fileID: 0}
   transitionDuration: 0.2
-  intensity: 30
+  intensity: 100
   autoOplen: 0
   audioSource: {fileID: 0}
 --- !u!108 &174233124
@@ -432,6 +433,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &174233126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174233120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &336384026
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,6 +779,7 @@ GameObject:
   - component: {fileID: 646433437}
   - component: {fileID: 646433439}
   - component: {fileID: 646433440}
+  - component: {fileID: 646433441}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -853,7 +878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightOBJ: {fileID: 0}
   transitionDuration: 0.1
-  intensity: 30
+  intensity: 100
   autoOplen: 1
   audioSource: {fileID: 0}
 --- !u!82 &646433440
@@ -952,6 +977,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &646433441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646433436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &650677311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,6 +1192,7 @@ GameObject:
   - component: {fileID: 1100090287}
   - component: {fileID: 1100090289}
   - component: {fileID: 1100090290}
+  - component: {fileID: 1100090291}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -1180,7 +1229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightOBJ: {fileID: 0}
   transitionDuration: 0.2
-  intensity: 30
+  intensity: 100
   autoOplen: 0
   audioSource: {fileID: 0}
 --- !u!108 &1100090288
@@ -1362,6 +1411,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1100090291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100090285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1150955353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,6 +1662,7 @@ GameObject:
   - component: {fileID: 1650540114}
   - component: {fileID: 1650540116}
   - component: {fileID: 1650540117}
+  - component: {fileID: 1650540118}
   m_Layer: 0
   m_Name: 5
   m_TagString: Untagged
@@ -1626,7 +1699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightOBJ: {fileID: 0}
   transitionDuration: 0.2
-  intensity: 30
+  intensity: 100
   autoOplen: 0
   audioSource: {fileID: 0}
 --- !u!108 &1650540115
@@ -1808,6 +1881,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1650540118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650540112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1682894419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,6 +1968,7 @@ GameObject:
   - component: {fileID: 1784597387}
   - component: {fileID: 1784597389}
   - component: {fileID: 1784597390}
+  - component: {fileID: 1784597391}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -1908,7 +2005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightOBJ: {fileID: 0}
   transitionDuration: 0.2
-  intensity: 30
+  intensity: 100
   autoOplen: 0
   audioSource: {fileID: 0}
 --- !u!108 &1784597388
@@ -2090,6 +2187,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1784597391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784597385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1857434810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4593130486874181694, guid: 1b0e619484082d54aa06433601f69a86,
