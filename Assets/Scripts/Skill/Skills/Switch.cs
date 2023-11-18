@@ -26,15 +26,29 @@ public class Switch : ISkill
         obj.SetActive(false);
         obj1.SetActive(false);
 
-        var dest = new Vector3 (posObj.x, posObj1.y, posObj.z);  
-        var dest1 = new Vector3 (posObj1.x, posObj.y, posObj1.z);  
 
+        Vector3 dest, dest1;
+
+        if(obj.GetComponent<Interactable>().SwitchableHeight || obj1.GetComponent<Interactable>().SwitchableHeight)
+        {
+            dest = new Vector3 (posObj.x, posObj.y, posObj.z);  
+            dest1 = new Vector3 (posObj1.x, posObj1.y, posObj1.z);  
+        }
+        else
+        {
+            dest = new Vector3 (posObj.x, posObj1.y, posObj.z);  
+            dest1 = new Vector3 (posObj1.x, posObj.y, posObj1.z);  
+        }
+         
         obj.transform.position = Vector3.Lerp(posObj, dest1, 1);
         obj1.transform.position = Vector3.Lerp(posObj1, dest, 1);
 
-        var rot1 = obj1.transform.rotation;
-        obj1.transform.rotation = obj.transform.rotation;
-        obj.transform.rotation = rot1;
+        if(obj.GetComponent<Interactable>().SwitchableRotation || obj1.GetComponent<Interactable>().SwitchableRotation)
+        {
+            var rot1 = obj1.transform.rotation;
+            obj1.transform.rotation = obj.transform.rotation;
+            obj.transform.rotation = rot1;
+        }
 
 
         obj.SetActive(true);

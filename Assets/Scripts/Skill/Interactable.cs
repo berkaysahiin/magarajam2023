@@ -10,11 +10,15 @@ public class Interactable : MonoBehaviour
     [SerializeField] private bool _freezable;
     [SerializeField] private bool _switchable;
     [SerializeField] private bool _rotatable;
+    [SerializeField] private bool _switchableHeight;
+    [SerializeField] private bool _switchableRotation;
     
     public bool CollisionRemovable { get { return _collisionRemovable; } }
     public bool Resizable { get { return _resizable; } }
     public bool Freezable { get { return _freezable; } }
     public bool Switchable { get { return _switchable; } }
+    public bool SwitchableHeight { get { return _switchableHeight; } }
+    public bool SwitchableRotation { get { return _switchableHeight; } }
     public bool Rotatable { get { return _rotatable; } }
 
 
@@ -22,6 +26,7 @@ public class Interactable : MonoBehaviour
     public bool Rotating { get; set; }
     public bool CollisionRemoved { get; set; }
     public bool Freezed { get; set; }
+
     
     public Vector3 ScaleVector = new(0.01f,0.01f,0.01f);
     public Vector3 RotateVector = new(0.1f,0.1f,0.1f);
