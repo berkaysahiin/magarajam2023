@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,17 +17,18 @@ public class RortateControl : MonoBehaviour
 
     void Update()
     {
-        float angle = Vector3.Angle(transform.eulerAngles, targetRotation);
-
-        if (Mathf.Abs(angle) < tolAngle)
-        {
+        if (math.abs(targetRotation.y - transform.rotation.y) < tolAngle)
             Finished = true;
+        else
+            Finished = false;
+
+
+        if (Finished)
+        {
+            _light.color = Color.green;
         }
         else
-        {
-            Finished = false;
-        }
+            _light.color = Color.red;
 
-        _light.enabled = Finished;
     }
 }

@@ -1,3 +1,4 @@
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class Switch : ISkill
@@ -30,11 +31,13 @@ public class Switch : ISkill
 
         if(obj.GetComponent<Interactable>().SwitchableHeight || obj1.GetComponent<Interactable>().SwitchableHeight)
         {
+            Debug.Log("Switched with height");
             dest = new Vector3 (posObj.x, posObj.y, posObj.z);  
             dest1 = new Vector3 (posObj1.x, posObj1.y, posObj1.z);  
         }
         else
         {
+            Debug.Log("Switched without height");
             dest = new Vector3 (posObj.x, posObj1.y, posObj.z);  
             dest1 = new Vector3 (posObj1.x, posObj.y, posObj1.z);  
         }
