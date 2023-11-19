@@ -2111,6 +2111,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   audioSource: {fileID: 0}
+  spotLights: []
 --- !u!1 &1027103209 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5137266714408608534, guid: be72181c4d5d016408e32f73a4f979e2,
@@ -2223,6 +2224,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   audioSource: {fileID: 0}
+  spotLights: []
 --- !u!1 &1240535187 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7707582435909194419, guid: be72181c4d5d016408e32f73a4f979e2,
@@ -2521,6 +2523,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   audioSource: {fileID: 0}
+  spotLights: []
 --- !u!1 &1339873249
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,6 +2575,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   audioSource: {fileID: 0}
+  spotLights: []
 --- !u!114 &1339873252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3314,6 +3318,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   audioSource: {fileID: 0}
+  spotLights: []
 --- !u!114 &1611743908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4091,6 +4096,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   audioSource: {fileID: 0}
+  spotLights: []
 --- !u!1 &1862598105
 GameObject:
   m_ObjectHideFlags: 0
@@ -4141,6 +4147,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   audioSource: {fileID: 0}
+  spotLights: []
 --- !u!114 &1862811690 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5064175656490532920, guid: a8706fe1eb8faca41925f7b59c36b9aa,
@@ -5369,6 +5376,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   audioSource: {fileID: 0}
+  spotLights: []
 --- !u!114 &2021944155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5628,6 +5636,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   audioSource: {fileID: 0}
+  spotLights:
+  - {fileID: 796494254}
+  - {fileID: 264624632}
+  - {fileID: 1964793950}
 --- !u!1001 &2144977311
 PrefabInstance:
   m_ObjectHideFlags: 0
