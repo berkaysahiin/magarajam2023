@@ -38,8 +38,8 @@ public class RotateManager : MonoBehaviour
                 childRotates[i].gameObject.transform.LookAt(player.transform);
             }
 
-            //if (audioSource.isPlaying == false) { audioSource.Play(); }
-            Invoke(nameof(EndSequence),  2);
+            if (audioSource.isPlaying == false) { audioSource.Play(); }
+            Invoke(nameof(EndSequence),  audioSource.clip.length);
         }
     }
 
