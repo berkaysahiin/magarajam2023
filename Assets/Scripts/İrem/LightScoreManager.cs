@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LightScoreManager : MonoBehaviour
 {
-    
     private const int MAX_LIGHTS_ENABLED = 3;
 
     public static LightScoreManager Instance { get; private set; }
@@ -27,10 +26,8 @@ public class LightScoreManager : MonoBehaviour
     {
         if(lightsEnabled == MAX_LIGHTS_ENABLED)
         {
-             Destroy(Box304);
+            SceneManagerScript.Instance.LoadNextScene();
             Debug.Log("2");
-
-
         }
 
     }

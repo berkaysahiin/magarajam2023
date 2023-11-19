@@ -7,6 +7,7 @@ public class DoorTriggerLight : MonoBehaviour
     [SerializeField] private float raycastDistance = 10f;
     [SerializeField] private LayerMask doorLayer;
     [SerializeField] private AudioSource audioSource; // Add this line
+    [SerializeField] List<GameObject> spotLights = new();
 
     private void Update()
     {
@@ -30,7 +31,10 @@ public class DoorTriggerLight : MonoBehaviour
                 audioSource.Play();
             }
 
-            // Spotlightin içindeki interact scripti disabled
+            for(int i = 0; i < spotLights.Count; i++)
+            {
+                spotLights[i].GetComponent<Interactable>().enabled = false;
+            }
         }
     }
 }

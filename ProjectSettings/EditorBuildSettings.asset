@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/iremfinal.unity
     guid: 54999f8658f3d554190c278d8f9d3f7c
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: 7225ec09087f4f34fb4997ace2ed176a
   m_configObjects: {}

@@ -27,7 +27,7 @@ public class MatchGameTeapot : MonoBehaviour
 private void StatueMatch(){
 
 
-        if (AreTransformsEqualWithTolerance(Teapot, InteractiveTeapot, 1f))
+        if (AreTransformsEqual(Teapot, InteractiveTeapot))
         {
             // Dınk diye ses
             audioSource.clip = DingIrem;
@@ -35,19 +35,15 @@ private void StatueMatch(){
             StatueScoreManager.Instance.IncreaseStatueEnabled();
             StatueScoreManager.Instance.CheckMaxStatueEnabled();
             // Objelerin scriptini sil
-          
+            interactiveTeapot.GetComponent<Interactable>().enabled = false;
         }
 
 
 
 
 }
-    bool AreTransformsEqualWithTolerance(Transform t1, Transform t2, float tolerance)
+    bool AreTransformsEqual(Transform t1, Transform t2)
     {
-        bool positionEqual = Vector3.Distance(t1.position, t2.position) <= tolerance;
-        bool rotationEqual = Quaternion.Angle(t1.rotation, t2.rotation) <= tolerance;
-        bool scaleEqual = Vector3.Distance(t1.localScale, t2.localScale) <= tolerance;
-
-        return positionEqual && rotationEqual && scaleEqual;
+        return t1.position == t2.position && t1.rotation == t2.rotation && t1.localScale == t2.localScale;
     }
 }
