@@ -21,6 +21,8 @@ public class Settings : MonoBehaviour
         Debug.Log(Sensivity);
         Debug.Log(Sound);
 
+        AudioListener.volume = Sound;
+
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             var active = container.activeInHierarchy;

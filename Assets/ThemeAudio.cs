@@ -6,6 +6,11 @@ public class ThemeAudio : MonoBehaviour
 {
     AudioSource audioSource;
 
+    [SerializeField]
+    AudioClip clip;
+
+     bool startedLoop = false;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -16,5 +21,11 @@ public class ThemeAudio : MonoBehaviour
 
     private void Update()
     {
+        if(audioSource.isPlaying == false && startedLoop == false)
+        {
+            startedLoop = true;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
     }
 }
