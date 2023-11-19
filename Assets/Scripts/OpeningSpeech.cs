@@ -13,7 +13,6 @@ public class OpeningSpeech : MonoBehaviour
     {
         if (m_AudioSource.isPlaying == false)
         {
-            Debug.Log("is playing false");
             SceneManagerScript.Instance.LoadNextScene();
         }
     }
