@@ -38,14 +38,14 @@ public class RotateManager : MonoBehaviour
                 childRotates[i].gameObject.transform.LookAt(player.transform);
             }
 
-            if (audioSource.isPlaying == false) { audioSource.Play(); }
-            Invoke(nameof(EndSequence), audioSource.clip.length );
+            //if (audioSource.isPlaying == false) { audioSource.Play(); }
+            Invoke(nameof(EndSequence),  2);
         }
     }
 
     private void EndSequence()
     {
-        SceneManagerScript.Instance.LoadNextScene();
+        SceneManagerScript.Instance.LoadScene("iremfinal");
     }
     
 
