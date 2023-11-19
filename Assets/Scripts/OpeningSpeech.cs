@@ -8,15 +8,12 @@ public class OpeningSpeech : MonoBehaviour
     {
         m_AudioSource = GetComponent<AudioSource>();
     }
-    private void Start()
-    {
-        m_AudioSource.Play();
-    }
 
     private void Update()
     {
         if (m_AudioSource.isPlaying == false)
         {
+            Debug.Log("is playing false");
             SceneManagerScript.Instance.LoadNextScene();
         }
     }

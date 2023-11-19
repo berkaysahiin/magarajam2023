@@ -6,7 +6,7 @@ public class RortateControl : MonoBehaviour
 {
     public bool Finished;
     [SerializeField] Vector3 targetRotation = Vector3.zero;
-    [SerializeField] float tolAngle = 10f;
+    [SerializeField] float minRotationOffset = 10f;
 
     private Light _light;
 
@@ -17,10 +17,14 @@ public class RortateControl : MonoBehaviour
 
     void Update()
     {
-        if (math.abs(targetRotation.y - transform.rotation.y) < tolAngle)
-            Finished = true;
-        else
-            Finished = false;
+        float currentRotationY = Clamp0360(transform.eulerAngles.y);
+        float targetRotationY = Clamp0360(targetRotation.y);
+
+        var diff = math.abs(targetRotationY - currentRotationY);
+
+        Debug.Log($"{gameObject.name} -> CurrentRotationY : {currentRotationY}, TargetRotationY : {targetRotationY}, diff: {diff}");
+
+        if (diff < minRotationOffset) Finished = true;
 
 
         if (Finished)
@@ -31,4 +35,15 @@ public class RortateControl : MonoBehaviour
             _light.color = Color.red;
 
     }
+
+    public float Clamp0360(float eulerAngles)
+    {
+        float result = eulerAngles - Mathf.CeilToInt(eulerAngles / 360f) * 360f;
+        if (result < 0)
+        {
+            result += 360f;
+        }
+        return result;
+    }
+
 }

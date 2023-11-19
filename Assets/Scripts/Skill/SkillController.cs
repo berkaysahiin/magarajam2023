@@ -141,7 +141,6 @@ public class SkillController : MonoBehaviour
 
                 var currentSkillBool = currentSkill.ToString();
                 characterStateMachine.SetBool(currentSkillBool, true);
-                Debug.Log("Bool is true " + currentSkillBool);
                 currentSkill.Revert(obj);
                 currentSkill.CurrentlyUsing = true;
             }
@@ -150,7 +149,6 @@ public class SkillController : MonoBehaviour
         {
             var currentSkillBool = currentSkill.ToString();
             characterStateMachine.SetBool(currentSkillBool, false);
-            Debug.Log("Bool is false " + currentSkillBool);
             currentSkill.CurrentlyUsing = false;
             audioSource.loop = false;
             StopFade();

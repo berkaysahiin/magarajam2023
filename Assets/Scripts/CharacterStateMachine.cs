@@ -32,11 +32,6 @@ public class CharacterStateMachine : MonoBehaviour
         playerMove = GetComponent<PlayerMove>();
     }
 
-    private void Update()
-    {
-        print(currentState.ToString());
-    }
-
 }
 public enum State
 {
