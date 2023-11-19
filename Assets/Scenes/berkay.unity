@@ -1331,6 +1331,11 @@ PrefabInstance:
       propertyPath: skinModeText
       value: 
       objectReference: {fileID: 2038133943}
+    - target: {fileID: 676443966420946939, guid: 8eb3a3f7812af204b86e306ba6d4f452,
+        type: 3}
+      propertyPath: SwitchAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 56bdcdd54ba2d134cb91a9251595ab6a, type: 3}
     - target: {fileID: 1667604918570642814, guid: 8eb3a3f7812af204b86e306ba6d4f452,
         type: 3}
       propertyPath: m_LocalPosition.x
