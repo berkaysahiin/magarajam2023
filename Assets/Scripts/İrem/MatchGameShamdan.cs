@@ -27,7 +27,7 @@ public class MatchGameShamdan : MonoBehaviour
 private void StatueMatch(){
 
 
-        if (AreTransformsEqual(Shamdan, InteractiveShamdan))
+       if (AreTransformsEqualWithTolerance(Shamdan, InteractiveShamdan, 1f))
         {
             // Dınk diye ses
             audioSource.clip = DingIrem;
@@ -42,8 +42,12 @@ private void StatueMatch(){
 
 
 }
-    bool AreTransformsEqual(Transform t1, Transform t2)
+    bool AreTransformsEqualWithTolerance(Transform t1, Transform t2, float tolerance)
     {
-        return t1.position == t2.position && t1.rotation == t2.rotation && t1.localScale == t2.localScale;
+        bool positionEqual = Vector3.Distance(t1.position, t2.position) <= tolerance;
+        bool rotationEqual = Quaternion.Angle(t1.rotation, t2.rotation) <= tolerance;
+        bool scaleEqual = Vector3.Distance(t1.localScale, t2.localScale) <= tolerance;
+
+        return positionEqual && rotationEqual && scaleEqual;
     }
 }
