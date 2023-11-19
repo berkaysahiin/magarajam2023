@@ -21,21 +21,17 @@ public class RotateManager : MonoBehaviour
                 childsFinished = false;
             }
         }
+
         
-        /*
         if (childsFinished)
         {
             for (int i = 0; i < childRotates.Length; i++)
             {
                 childRotates[i].gameObject.transform.LookAt(player.transform);
-                childRotates[i].GetComponentInChildren<Light>().color = Color.green;
-                Debug.Log("finished");
             }
 
             Invoke(nameof(EndSequence), 10);
         }
-        */
-        
     }
 
     private void EndSequence()

@@ -22,7 +22,7 @@ public class RortateControl : MonoBehaviour
 
         var diff = math.abs(targetRotationY - currentRotationY);
 
-        Debug.Log($"{gameObject.name} -> CurrentRotationY : {currentRotationY}, TargetRotationY : {targetRotationY}, diff: {diff}");
+        //Debug.Log($"{gameObject.name} -> CurrentRotationY : {currentRotationY}, TargetRotationY : {targetRotationY}, diff: {diff}");
 
         if (diff < minRotationOffset) Finished = true;
 
