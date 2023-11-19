@@ -10,7 +10,7 @@ public class LightScoreManager : MonoBehaviour
     public static LightScoreManager Instance { get; private set; }
 
     [SerializeField] private int lightsEnabled = 0;
-    [SerializeField] private GameObject Box131;
+    [SerializeField] private GameObject Box304;
 
     private void Awake()
     {
@@ -20,13 +20,16 @@ public class LightScoreManager : MonoBehaviour
     public void IncreaseLightsEnabled()
     {
         lightsEnabled++;
+        Debug.Log("1");
     }
 
     public void CheckMaxLightsEnabled()
     {
         if(lightsEnabled == MAX_LIGHTS_ENABLED)
         {
-             Destroy(Box131);
+             Destroy(Box304);
+            Debug.Log("2");
+
 
         }
 
