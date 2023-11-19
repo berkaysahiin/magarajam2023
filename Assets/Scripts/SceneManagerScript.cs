@@ -54,7 +54,7 @@ public class SceneManagerScript : MonoBehaviour
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
+        int nextSceneIndex = (currentSceneIndex + 1);
 
         SceneManager.LoadScene(nextSceneIndex);
     }
