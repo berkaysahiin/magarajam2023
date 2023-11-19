@@ -6,9 +6,10 @@ public class ThemeAudio : MonoBehaviour
 {
     AudioSource audioSource;
 
+    [SerializeField]
     AudioClip clip;
 
-    bool startedLoop = false;
+     bool startedLoop = false;
 
     private void Awake()
     {
