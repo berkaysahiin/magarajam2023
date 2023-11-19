@@ -45,7 +45,7 @@ public class RotateManager : MonoBehaviour
 
     private void EndSequence()
     {
-        SceneManagerScript.Instance.LoadScene("iremfinal");
+        SceneManagerScript.Instance.LoadNextScene();
     }
     
 
