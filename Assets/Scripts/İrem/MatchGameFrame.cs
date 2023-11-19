@@ -35,7 +35,7 @@ private void StatueMatch(){
             StatueScoreManager.Instance.IncreaseStatueEnabled();
             StatueScoreManager.Instance.CheckMaxStatueEnabled();
             // Objelerin scriptini sil
-            interactiveFrame.GetComponent<Interactable>().enabled = false;
+       
         }
 
 
