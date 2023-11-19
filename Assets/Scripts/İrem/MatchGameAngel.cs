@@ -25,7 +25,7 @@ public class MatchGameAngel : MonoBehaviour
 
     private void StatueMatch()
     {
-        if (AreTransformsEqualWithTolerance(Angel, InteractiveAngel, 7f))
+        if (AreTransformsEqualWithTolerance(Angel, InteractiveAngel, 0.4f))
         {
             // Dınk diye ses
             audioSource.clip = DingIrem;
