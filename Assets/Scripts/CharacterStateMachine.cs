@@ -8,6 +8,7 @@ public class CharacterStateMachine : MonoBehaviour
     private State currentState = State.None;
 
     private Animator animator;
+    private PlayerMove playerMove;
 
     public void ChangeStateTo(State state)
     {
@@ -28,17 +29,14 @@ public class CharacterStateMachine : MonoBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-    }
-
-    private void Update()
-    {
-        
+        playerMove = GetComponent<PlayerMove>();
     }
 
 }
 public enum State
 {
     None,
+    Move,
     Idle,
     Skill_RemoveCollision,
     Skill_Freeze,

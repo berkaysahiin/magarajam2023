@@ -14,12 +14,25 @@ public class SkillController : MonoBehaviour
     [SerializeField]
     private bool CanResize, CanFreeze, CanSwitch, CanRemoveCollision, CanRotate;
 
+    AudioSource audioSource;
+
+    [SerializeField] AudioClip ResizeAudioClip;
+    [SerializeField] AudioClip NoneAudioClip;
+    [SerializeField] AudioClip FreezeAudioClip;
+    [SerializeField] AudioClip RevertFreezeAudioClip;
+    [SerializeField] AudioClip SwitchAudioClip;
+    [SerializeField] AudioClip RemoveCollisonAudioClip;
+    [SerializeField] AudioClip RevertRemoveCollisonAudioClip;
+    [SerializeField] AudioClip RotateAudioClip;
+
+    AudioClip NoneClip;
+
     private Dictionary<string, ISkill> inputToSkill = new() {
         {"Alpha1", new Resize() },
         {"Alpha2", new Switch() },
-        {"Alpha3", new RemoveCollision() },
+        {"Alpha3", new Rotate() },
         {"Alpha4", new Freeze() },
-        {"Alpha5", new Rotate() },
+        {"Alpha5", new RemoveCollision() },
     };
 
     private Dictionary<string, State> skillToState = new() {
@@ -30,11 +43,14 @@ public class SkillController : MonoBehaviour
         {"Rotate", State.Skill_Rotate },
     };
 
+
+    private Dictionary<string, AudioClip> skillToAudioClip;
     private Dictionary<string, bool> skillToBool;
 
     private void Awake()
     {
         characterStateMachine = GetComponent<CharacterStateMachine>();
+        audioSource = GetComponent<AudioSource>();
 
         skillToBool = new Dictionary<string, bool>
         {
@@ -44,6 +60,22 @@ public class SkillController : MonoBehaviour
             {"Switch", CanSwitch },
             {"RemoveCollision", CanRemoveCollision },
             {"Rotate", CanRotate }
+        };
+
+        skillToAudioClip = new()
+        {
+            {"None", NoneAudioClip},
+            {"RevertNone", NoneAudioClip},
+            {"Resize", ResizeAudioClip},
+            {"RevertResize", ResizeAudioClip},
+            {"Freeze", FreezeAudioClip },
+            {"RevertFreeze", RevertFreezeAudioClip },
+            {"Switch", SwitchAudioClip },
+            {"RevertSwitch", SwitchAudioClip },
+            {"RemoveCollision", RemoveCollisonAudioClip },
+            {"RevertRemoveCollision", RevertRemoveCollisonAudioClip },
+            {"Rotate", RotateAudioClip },
+            {"RevertRotate", RotateAudioClip }
         };
     }
 
@@ -85,6 +117,10 @@ public class SkillController : MonoBehaviour
                 characterStateMachine.SetBool(currentSkillBool, true);
                 Debug.Log("Bool is true " + currentSkillBool);
 
+                audioSource.loop = true;
+                audioSource.volume = 1;
+                if(audioSource.isPlaying == false) audioSource.PlayOneShot(skillToAudioClip[currentSkill.ToString()]);
+
                 currentSkill.Apply(obj);
                 currentSkill.CurrentlyUsing = true;
             }
@@ -98,19 +134,24 @@ public class SkillController : MonoBehaviour
 
             if (currentSkill.CheckRevert(obj) && skillToBool[currentSkill.ToString()])
             {
+                audioSource.loop = true;
+                audioSource.volume = 1;
+                if(audioSource.isPlaying == false) audioSource.PlayOneShot(skillToAudioClip["Revert" + currentSkill.ToString()]);
+
+
                 var currentSkillBool = currentSkill.ToString();
                 characterStateMachine.SetBool(currentSkillBool, true);
-                Debug.Log("Bool is true " + currentSkillBool);
                 currentSkill.Revert(obj);
                 currentSkill.CurrentlyUsing = true;
             }
         }
         else
         {
-                var currentSkillBool = currentSkill.ToString();
-                characterStateMachine.SetBool(currentSkillBool, false);
-                Debug.Log("Bool is false " + currentSkillBool);
-                currentSkill.CurrentlyUsing = false;
+            var currentSkillBool = currentSkill.ToString();
+            characterStateMachine.SetBool(currentSkillBool, false);
+            currentSkill.CurrentlyUsing = false;
+            audioSource.loop = false;
+            StopFade();
         }
 
     }
@@ -124,6 +165,11 @@ public class SkillController : MonoBehaviour
 
             if (currentSkill.CheckApply(obj) && skillToBool[currentSkill.ToString()])
             {
+                audioSource.loop = false;
+                audioSource.volume = 1;
+                audioSource.Stop();
+                audioSource.PlayOneShot(skillToAudioClip[currentSkill.ToString()]);
+
                 var currentSkillTrigger = currentSkill.ToString();
                 currentSkill.Apply(obj);
                 characterStateMachine.Trigger(currentSkillTrigger);
@@ -140,6 +186,11 @@ public class SkillController : MonoBehaviour
             
             if (currentSkill.CheckRevert(obj) && skillToBool[currentSkill.ToString()])
             {
+                audioSource.loop = false;
+                audioSource.volume = 1;
+                audioSource.Stop();
+                audioSource.PlayOneShot(skillToAudioClip["Revert" + currentSkill.ToString()]);
+
                 currentSkill.Revert(obj);
                 var currentSkillTrigger = "R" + currentSkill.ToString();
                 characterStateMachine.Trigger(currentSkillTrigger);
@@ -151,6 +202,7 @@ public class SkillController : MonoBehaviour
         else
         {
                 currentSkill.CurrentlyUsing = false;
+                audioSource.loop = false;
         }
     }
    
@@ -166,9 +218,7 @@ public class SkillController : MonoBehaviour
             {
                 return obj;
             }
-            
         }
-
         return null;
     }
 
@@ -189,5 +239,16 @@ public class SkillController : MonoBehaviour
                 }
             }
         }
+    }
+    private void StopFade()
+    {
+        float newVolume = audioSource.volume - (3f * Time.deltaTime);  //change 0.01f to something else to adjust the rate of the volume dropping
+
+        if (newVolume < 0f)
+        {
+            newVolume = 0f;
+        }
+
+        audioSource.volume = newVolume;
     }
 }

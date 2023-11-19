@@ -21,12 +21,13 @@ public class PlayerCam : MonoBehaviour
 
     void Update()
     {
-        MouseControl();
+        Debug.Log($"Sensivity {Settings.Instance.Sensivity}, sens: {sens}");
+        MouseControl(Settings.Instance.Sensivity * sens);
     }
-    void MouseControl()
+    void MouseControl(float sensivity)
     {
-        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sens;
-        float mousey = Input.GetAxis("Mouse Y") * Time.deltaTime * sens;
+        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensivity;
+        float mousey = Input.GetAxis("Mouse Y") * Time.deltaTime * sensivity;
 
         xRotation -= mousey;
         xRotation = Mathf.Clamp(xRotation, up, down);

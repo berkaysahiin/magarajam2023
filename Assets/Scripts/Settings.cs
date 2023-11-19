@@ -36,7 +36,6 @@ public class Settings : MonoBehaviour
                 container.SetActive(true);
 
             }
-
         }
     }
 
@@ -58,8 +57,6 @@ public class Settings : MonoBehaviour
     {
         Debug.Log("2112313213213213");
     }
-
-   
 
     private void Awake()
     {

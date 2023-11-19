@@ -8,10 +8,6 @@ public class OpeningSpeech : MonoBehaviour
     {
         m_AudioSource = GetComponent<AudioSource>();
     }
-    private void Start()
-    {
-        m_AudioSource.Play();
-    }
 
     private void Update()
     {

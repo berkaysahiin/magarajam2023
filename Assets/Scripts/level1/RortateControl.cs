@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -5,7 +6,7 @@ public class RortateControl : MonoBehaviour
 {
     public bool Finished;
     [SerializeField] Vector3 targetRotation = Vector3.zero;
-    [SerializeField] float tolAngle = 10f;
+    [SerializeField] float minRotationOffset = 10f;
 
     private Light _light;
 
@@ -16,17 +17,33 @@ public class RortateControl : MonoBehaviour
 
     void Update()
     {
-        float angle = Vector3.Angle(transform.eulerAngles, targetRotation);
+        float currentRotationY = Clamp0360(transform.eulerAngles.y);
+        float targetRotationY = Clamp0360(targetRotation.y);
 
-        if (Mathf.Abs(angle) < tolAngle)
+        var diff = math.abs(targetRotationY - currentRotationY);
+
+        //Debug.Log($"{gameObject.name} -> CurrentRotationY : {currentRotationY}, TargetRotationY : {targetRotationY}, diff: {diff}");
+
+        if (diff < minRotationOffset) Finished = true;
+
+
+        if (Finished)
         {
-            Finished = true;
+            _light.color = Color.green;
         }
         else
-        {
-            Finished = false;
-        }
+            _light.color = Color.red;
 
-        _light.enabled = Finished;
     }
+
+    public float Clamp0360(float eulerAngles)
+    {
+        float result = eulerAngles - Mathf.CeilToInt(eulerAngles / 360f) * 360f;
+        if (result < 0)
+        {
+            result += 360f;
+        }
+        return result;
+    }
+
 }
