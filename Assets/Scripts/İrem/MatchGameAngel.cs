@@ -7,6 +7,7 @@ public class MatchGameAngel : MonoBehaviour
     [SerializeField] private GameObject angel;
     [SerializeField] private GameObject interactiveAngel;
 
+
     public Transform Angel;
     public Transform InteractiveAngel;
 
@@ -25,7 +26,7 @@ public class MatchGameAngel : MonoBehaviour
 
     private void StatueMatch()
     {
-        if (AreTransformsEqualWithTolerance(Angel, InteractiveAngel, 0.4f))
+        if (AreTransformsEqualWithTolerance(Angel, InteractiveAngel, 1f))
         {
             // Dınk diye ses
             audioSource.clip = DingIrem;
@@ -34,7 +35,7 @@ public class MatchGameAngel : MonoBehaviour
             StatueScoreManager.Instance.CheckMaxStatueEnabled();
             // Objelerin scriptini sil
             Debug.Log("başarılı");
-            interactiveAngel.GetComponent<Interactable>().enabled = false;
+           
         }
     }
 
