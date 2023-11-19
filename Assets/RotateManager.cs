@@ -4,6 +4,14 @@ public class RotateManager : MonoBehaviour
 {
     RortateControl[] childRotates;
     GameObject player;
+
+    AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();  
+    }
+
     void Start()
     {
         childRotates = GetComponentsInChildren<RortateControl>();
@@ -30,7 +38,8 @@ public class RotateManager : MonoBehaviour
                 childRotates[i].gameObject.transform.LookAt(player.transform);
             }
 
-            Invoke(nameof(EndSequence), 10);
+            if (audioSource.isPlaying == false) { audioSource.Play(); }
+            Invoke(nameof(EndSequence), audioSource.clip.length );
         }
     }
 
