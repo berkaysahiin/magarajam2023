@@ -30,11 +30,9 @@ public class DoorTriggerLight : MonoBehaviour
             {
                 audioSource.Play();
             }
+            Destroy(hit.collider.gameObject);
 
-            for(int i = 0; i < spotLights.Count; i++)
-            {
-                spotLights[i].GetComponent<Interactable>().enabled = false;
-            }
+           
         }
     }
 }
